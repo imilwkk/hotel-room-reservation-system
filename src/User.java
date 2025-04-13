@@ -9,7 +9,7 @@ public class User {
         this.phone = phone;
     }
 
-    // Getters and Setters
+    // getters and Setters
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
@@ -24,7 +24,7 @@ public class User {
         return name + "," + email + "," + phone;
     }
 
-    // Helper method to convert string into a User object
+    // helper method to convert string into a User object
     public static User fromString(String data) {
         String[] parts = data.split(",");
         return new User(parts[0], parts[1], parts[2]);

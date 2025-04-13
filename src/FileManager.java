@@ -4,7 +4,7 @@ import java.util.List;
 
 public class FileManager {
 
-    // Method to save rooms to a file
+    // method to save rooms to a file
     public static void saveRooms(List<Room> rooms) {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("rooms.dat"))) {
             out.writeObject(rooms); // Serializing rooms list to file
@@ -13,7 +13,7 @@ public class FileManager {
         }
     }
 
-    // Method to load rooms from file
+    // method to load rooms from file
     public static List<Room> loadRooms() {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("rooms.dat"))) {
             return (List<Room>) in.readObject(); // Deserializing rooms list from file
@@ -23,7 +23,7 @@ public class FileManager {
         }
     }
 
-    // Save users to a file
+    // save users to a file
     public static void saveUsers(List<User> users) {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("users.dat"))) {
             out.writeObject(users);
@@ -32,7 +32,7 @@ public class FileManager {
         }
     }
 
-    // Load users from file
+    // load users from file
     public static List<User> loadUsers() {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("users.dat"))) {
             return (List<User>) in.readObject();

@@ -6,7 +6,7 @@ public class Reservation {
     private User user;
     private String reservationDate;
 
-    // Constructor
+    // constructor
     public Reservation(Room room, User user, String reservationDate) {
         this.reservationId = UUID.randomUUID().toString();  // Generate a unique ID
         this.room = room;
@@ -14,7 +14,7 @@ public class Reservation {
         this.reservationDate = reservationDate;
     }
 
-    // Getters and Setters
+    // getters and setters
     public String getReservationId() { return reservationId; }
     public void setReservationId(String reservationId) { this.reservationId = reservationId; }
 

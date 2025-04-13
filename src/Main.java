@@ -51,7 +51,7 @@ public class Main {
         }
     }
 
-    // Register a new user
+    // register a new user
     private static void registerUser() {
         System.out.print("Enter User Name: ");
         String name = scanner.nextLine();
@@ -66,7 +66,7 @@ public class Main {
         System.out.println("User registered successfully!");
     }
 
-    // View all users
+    // view all users
     private static void viewUsers() {
         System.out.println("\nUsers List:");
         for (User user : users) {
@@ -74,7 +74,7 @@ public class Main {
         }
     }
 
-    // View all rooms
+    // view all rooms
     private static void viewRooms() {
         System.out.println("\nRooms List:");
         for (Room room : rooms) {
@@ -82,7 +82,7 @@ public class Main {
         }
     }
 
-    // Add a new room
+    // add a new room
     private static void addRoom() {
         System.out.print("Enter Room Number: ");
         int roomNumber = Integer.parseInt(scanner.nextLine());
@@ -118,11 +118,11 @@ public class Main {
 
         Room room = new Room(roomNumber, roomType, price, isAvailable);
         rooms.add(room);
-        FileManager.saveRooms(rooms); // Save after adding
+        FileManager.saveRooms(rooms); // save after adding
         System.out.println("Room added successfully!");
     }
 
-    // Book a room
+    // book a room
     private static void bookRoom() {
         System.out.println("\nAvailable Rooms:");
         for (Room room : rooms) {
@@ -154,14 +154,14 @@ public class Main {
         Reservation reservation = new Reservation(room, user, reservationDate);
         reservations.add(reservation);
 
-        // Mark room as booked
+        // mark room as booked
         room.setAvailable(false);
         FileManager.saveRooms(rooms); // Save after booking
 
         System.out.println("Room booked successfully!");
     }
 
-    // Cancel a reservation by User Name
+    // cancel a reservation by username
     private static void cancelReservation() {
         System.out.print("Enter User Name to cancel reservation: ");
         String userName = scanner.nextLine();
@@ -203,14 +203,14 @@ public class Main {
         String confirm = scanner.nextLine();
 
         if (confirm.equalsIgnoreCase("yes")) {
-            // Mark the room as available again
+            // mark the room as available again
             Room room = reservationToCancel.getRoom();
             room.setAvailable(true);
 
-            // Remove the reservation
+            // remove the reservation
             reservations.remove(reservationToCancel);
 
-            // Save the changes
+            // save the changes
             FileManager.saveRooms(rooms);
             System.out.println("Reservation canceled successfully.");
         } else {
